@@ -46,9 +46,12 @@ if __name__ == "__main__":
             print("コンパイルを開始します。これには時間がかかります。")
             for folder in matching_folders:
                 folder_path = os.path.join(project_file_path, folder)
-                if os.path.exists(folder_path + '\\' + folder + ".exe"):
-                    os.remove(folder_path + '\\' + folder + ".exe")
-                    os.remove(folder_path + '\\' + folder + ".obj")
+                try:
+                    if os.path.exists(folder_path + '\\' + folder + ".exe"):
+                        os.remove(folder_path + '\\' + folder + ".exe")
+                        os.remove(folder_path + '\\' + folder + ".obj")
+                except :
+                    pass
                 print(f"{folder}", end='...')
                 result = subprocess.run('nmake report', cwd=folder_path, shell=True, capture_output=True, text=True)
                 if not "この実行結果はそれぞれのフォルダのresult.txtに保存されています" in result.stdout:
