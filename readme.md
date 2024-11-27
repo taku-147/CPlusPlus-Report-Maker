@@ -1,6 +1,6 @@
 # CPlusPlus-Report-Maker
 とりまつくったお
-<br>だれかいしゅーあったらだしてお
+<br>だれかいしゅーあったらだして
 
 ## License
 
